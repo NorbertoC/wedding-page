@@ -1,6 +1,6 @@
 export default function WeddingPeople() {
 	return (
-		<div className="right_container">
+		<div className="w-full bg-white h-screen">
 			<div>
 				<p>Best Man</p>
 				<p>To be defined</p>

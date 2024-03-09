@@ -1,6 +1,6 @@
 export default function Story() {
 	return (
-		<div className="right_container">
+		<div className="w-full bg-white h-screen">
 			<div>
 				<p>How did we meet?</p>
 				<p>To be defined</p>

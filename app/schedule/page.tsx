@@ -1,6 +1,6 @@
 export default function Schedule() {
 	return (
-		<div className="right_container">
+		<div className="w-full bg-white h-screen">
 			<div>
 				<p>When is it?</p>
 				<p>To be defined</p>

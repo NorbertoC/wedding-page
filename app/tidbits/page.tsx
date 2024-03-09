@@ -1,6 +1,6 @@
 export default function TidBits() {
 	return (
-		<div className="right_container">
+		<div className="w-full bg-white h-screen">
 			<div>
 				<p>Algunas curiosidades</p>
 				<p>To be defined</p>

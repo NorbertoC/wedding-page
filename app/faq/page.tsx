@@ -1,6 +1,6 @@
 export default function Faq() {
 	return (
-		<div className="right_container">
+		<div className="w-full bg-white h-screen">
 			<div>
 				<p>Frequently asked questions</p>
 				<p>To be defined</p>

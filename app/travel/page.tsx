@@ -1,6 +1,6 @@
 export default function Travel() {
 	return (
-		<div className="right_container">
+		<div className="w-full bg-white h-screen">
 			<div>
 				<p>How to travel to the wedding</p>
 			</div>
