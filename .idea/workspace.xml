@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="d83c5630-b27f-4f03-93c7-dd3f9e025ebb" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/public/Image-1.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/Image-2.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/Image-3.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/Image-4.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/Image-5.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/Image-6.jpeg" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 8
+}</component>
+  <component name="ProjectId" id="2cXVJU1CLhc2DtNaTyUvldxdUwF" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "/Users/norberto/wedding-page/app/faq",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "ts.external.directory.path": "/Users/norberto/wedding-page/node_modules/typescript/lib",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/faq" />
+      <recent name="$PROJECT_DIR$/app/schedule" />
+      <recent name="$PROJECT_DIR$/app/story" />
+      <recent name="$PROJECT_DIR$/app/tidbits" />
+      <recent name="$PROJECT_DIR$/app/travel" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/public" />
+      <recent name="$PROJECT_DIR$/app/components" />
+      <recent name="$PROJECT_DIR$/app" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="d83c5630-b27f-4f03-93c7-dd3f9e025ebb" name="Changes" comment="" />
+      <created>1708257839743</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1708257839743</updated>
+      <workItem from="1708257840785" duration="10626000" />
+      <workItem from="1708732653665" duration="1429000" />
+      <workItem from="1709121167720" duration="1079000" />
+      <workItem from="1709448685845" duration="12941000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
