@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { ImageScrollingCarousel } from "@/app/components/imageScrollingCarousel/page";
 import {RightScrollArea} from "@/app/components/scrollArea/page";
 
@@ -11,7 +10,9 @@ export default function Home() {
       </div>
       <div className="bg-amber-300 w-2/5">
         right section
-        <RightScrollArea />
+        <div className="h-screen overflow-hidden">
+          <RightScrollArea/>
+        </div>
       </div>
     </main>
   );
