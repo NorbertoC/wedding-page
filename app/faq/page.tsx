@@ -1,5 +1,3 @@
-import styles from "./page.module.css";
-
 export default function Faq() {
 	return (
 		<div className="right_container">
