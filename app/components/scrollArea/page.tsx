@@ -81,8 +81,6 @@ export function RightScrollArea() {
 		}
 	};
 	
-	console.log('activeComponent: ', activeComponent)
-	
 	useEffect(() => {
 		const handleScrollEvent = () => handleScroll();
 		scrollContainerRef.current?.addEventListener("scroll", handleScrollEvent);
