@@ -27,6 +27,10 @@ export function RightScrollArea() {
 		activeComponent: state.activeComponent,
 	}));
 	
+	useEffect(() => {
+		setActiveComponent("welcome");
+	}, []);
+	
 	const handleScroll = () => {
 		const currentPosition = scrollContainerRef.current?.scrollTop || 0;
 		fetchCurrentPosition(currentPosition);
@@ -45,39 +49,39 @@ export function RightScrollArea() {
 			currentPosition >= welcomePos &&
 			currentPosition < storyPos
 		) {
-			setActiveComponent("Welcome");
+			setActiveComponent("welcome");
 		} else if (
 			currentPosition >= storyPos &&
 			currentPosition < tidbitsPos
 		) {
-			setActiveComponent("Story");
+			setActiveComponent("story");
 		} else if (
 			currentPosition >= tidbitsPos &&
 			currentPosition < schedulePos
 		) {
-			setActiveComponent("TidBits");
+			setActiveComponent("tidBits");
 		} else if (
 			currentPosition >= schedulePos &&
 			currentPosition < wherePos
 		) {
-			setActiveComponent("Schedule");
+			setActiveComponent("schedule");
 		} else if (
 			currentPosition >= wherePos &&
 			currentPosition < travelPos
 		) {
-			setActiveComponent("Where");
+			setActiveComponent("where");
 		} else if (
 			currentPosition >= travelPos &&
 			currentPosition < weddingPeoplePos
 		) {
-			setActiveComponent("Travel");
+			setActiveComponent("travel");
 		} else if (
 			currentPosition >= weddingPeoplePos &&
 			currentPosition < faqPos
 		) {
-			setActiveComponent("WeddingPeople");
+			setActiveComponent("weddingPeople");
 		} else if (currentPosition >= faqPos) {
-			setActiveComponent("Faq");
+			setActiveComponent("faq");
 		}
 	};
 	
