@@ -1,5 +1,5 @@
-import { ImageScrolling } from "@/app/components/imageScrollingCarousel/page";
-import { RightScrollArea } from "@/app/components/scrollArea/page";
+import { ImageScrolling } from "@/components/imageScrollingCarousel/page";
+import { RightScrollArea } from "@/components/rightScrollArea/page";
 
 export default function Home() {
   return (
