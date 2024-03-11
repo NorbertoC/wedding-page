@@ -13,6 +13,17 @@ import TidBits from "@/app/tidbits/page";
 import Schedule from "@/app/schedule/page";
 import { useScrollPositionStore } from "@/store/scrollStore";
 
+const components = [
+	{ id: "welcome", component: <Welcome /> },
+	{ id: "story", component: <Story /> },
+	{ id: "tidBits", component: <TidBits /> },
+	{ id: "schedule", component: <Schedule /> },
+	{ id: "where", component: <Where /> },
+	{ id: "travel", component: <Travel /> },
+	{ id: "weddingPeople", component: <WeddingPeople /> },
+	{ id: "faq", component: <Faq /> }
+];
+
 export function RightScrollArea() {
 	const scrollContainerRef = useRef<HTMLDivElement>(null);
 	const {
@@ -35,54 +46,19 @@ export function RightScrollArea() {
 		const currentPosition = scrollContainerRef.current?.scrollTop || 0;
 		fetchCurrentPosition(currentPosition);
 		
-		const welcomePos = document.getElementById("welcome")?.offsetTop || 0;
-		const storyPos = document.getElementById("story")?.offsetTop || 0;
-		const tidbitsPos = document.getElementById("tidbits")?.offsetTop || 0;
-		const schedulePos = document.getElementById("schedule")?.offsetTop || 0;
-		const wherePos = document.getElementById("where")?.offsetTop || 0;
-		const travelPos = document.getElementById("travel")?.offsetTop || 0;
-		const weddingPeoplePos =
-			document.getElementById("wedding-people")?.offsetTop || 0;
-		const faqPos = document.getElementById("faq")?.offsetTop || 0;
-		
-		if (
-			currentPosition >= welcomePos &&
-			currentPosition < storyPos
-		) {
-			setActiveComponent("welcome");
-		} else if (
-			currentPosition >= storyPos &&
-			currentPosition < tidbitsPos
-		) {
-			setActiveComponent("story");
-		} else if (
-			currentPosition >= tidbitsPos &&
-			currentPosition < schedulePos
-		) {
-			setActiveComponent("tidBits");
-		} else if (
-			currentPosition >= schedulePos &&
-			currentPosition < wherePos
-		) {
-			setActiveComponent("schedule");
-		} else if (
-			currentPosition >= wherePos &&
-			currentPosition < travelPos
-		) {
-			setActiveComponent("where");
-		} else if (
-			currentPosition >= travelPos &&
-			currentPosition < weddingPeoplePos
-		) {
-			setActiveComponent("travel");
-		} else if (
-			currentPosition >= weddingPeoplePos &&
-			currentPosition < faqPos
-		) {
-			setActiveComponent("weddingPeople");
-		} else if (currentPosition >= faqPos) {
-			setActiveComponent("faq");
-		}
+		components.forEach(({ id }) => {
+			const elementPos = document.getElementById(id)?.offsetTop || 0;
+			const nextElementPos =
+				document.getElementById(components[components.length - 1].id)
+					?.offsetTop || 0;
+			
+			if (
+				currentPosition >= elementPos &&
+				currentPosition < nextElementPos
+			) {
+				setActiveComponent(id);
+			}
+		});
 	};
 	
 	useEffect(() => {
@@ -99,32 +75,11 @@ export function RightScrollArea() {
 	
 	return (
 		<div className="h-screen w-full overflow-y-auto" ref={scrollContainerRef}>
-			<div className="">
-				<div id="welcome">
-					<Welcome />
+			{components.map(({ id, component }) => (
+				<div key={id} id={id}>
+					{component}
 				</div>
-				<div id="story">
-					<Story />
-				</div>
-				<div id="tidbits">
-					<TidBits />
-				</div>
-				<div id="schedule">
-					<Schedule />
-				</div>
-				<div id="where">
-					<Where />
-				</div>
-				<div id="travel">
-					<Travel />
-				</div>
-				<div id="wedding-people">
-					<WeddingPeople />
-				</div>
-				<div id="faq">
-					<Faq />
-				</div>
-			</div>
+			))}
 		</div>
 	);
 }
