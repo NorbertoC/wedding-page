@@ -73,6 +73,13 @@ export function RightScrollArea() {
 		};
 	}, [scrollContainerRef]);
 	
+	const scrollToComponent = (id: string) => {
+		const component = document.getElementById(id);
+		if (component) {
+			component.scrollIntoView({ behavior: "smooth" });
+		}
+	};
+	
 	return (
 		<div className="h-screen w-full overflow-y-auto" ref={scrollContainerRef}>
 			{components.map(({ id, component }) => (
