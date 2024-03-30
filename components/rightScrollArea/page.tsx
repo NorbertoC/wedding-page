@@ -31,12 +31,19 @@ export function RightScrollArea() {
 		fetchCurrentPosition,
 		setActiveComponent,
 		activeComponent,
+		scrollToComponent,
 	} = useScrollPositionStore((state) => ({
 		currentScrollPosition: state.currentScrollPosition,
 		fetchCurrentPosition: state.fetchCurrentPosition,
 		setActiveComponent: state.setActiveComponent,
 		activeComponent: state.activeComponent,
+		scrollToComponent: state.scrollToComponent,
 	}));
+	
+	
+	const handleClick = () => {
+		scrollToComponent("welcome"); // Call the scrollToComponent function with the name of the component
+	};
 	
 	useEffect(() => {
 		setActiveComponent("welcome");
@@ -72,13 +79,6 @@ export function RightScrollArea() {
 			);
 		};
 	}, [scrollContainerRef]);
-	
-	const scrollToComponent = (id: string) => {
-		const component = document.getElementById(id);
-		if (component) {
-			component.scrollIntoView({ behavior: "smooth" });
-		}
-	};
 	
 	return (
 		<div className="h-screen w-full overflow-y-auto" ref={scrollContainerRef}>

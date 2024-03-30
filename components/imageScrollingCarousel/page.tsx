@@ -52,7 +52,7 @@ export function ImageScrolling() {
 			</button>
 			
 			<div ref={sidebarRef}>
-				<Sidebar isOpen={isSidebarOpen}/>
+				<Sidebar isOpen={isSidebarOpen} />
 			</div>
 			
 			{imageUrls.map((imageObj, index) => (
