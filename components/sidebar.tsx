@@ -20,7 +20,22 @@ function Sidebar({ isOpen, onItemClick }: SidebarProps) {
 					<button onClick={() => handleItemClick("story")}>Story</button>
 				</li>
 				<li>
+					<button onClick={() => handleItemClick("schedule")}>Schedule</button>
+				</li>
+				<li>
 					<button onClick={() => handleItemClick("tidBits")}>Tidbits</button>
+				</li>
+				<li>
+					<button onClick={() => handleItemClick("where")}>Where</button>
+				</li>
+				<li>
+					<button onClick={() => handleItemClick("travel")}>Travel</button>
+				</li>
+				<li>
+					<button onClick={() => handleItemClick("weddingPeople")}>Wedding People</button>
+				</li>
+				<li>
+					<button onClick={() => handleItemClick("faq")}>FAQ</button>
 				</li>
 			</ul>
 		</div>
