@@ -7,8 +7,9 @@ import Sidebar from "@/components/sidebar";
 
 export function ImageScrolling() {
 	const [isSidebarOpen, setIsSidebarOpen] = useState(false);
-	const { activeComponent } = useScrollPositionStore((state) => ({
+	const { activeComponent, setActiveComponent } = useScrollPositionStore((state) => ({
 		activeComponent: state.activeComponent,
+		setActiveComponent: state.setActiveComponent,
 	}));
 	const sidebarRef = useRef<HTMLDivElement>(null); // Specify the type of sidebarRef
 	
@@ -42,6 +43,11 @@ export function ImageScrolling() {
 		opacityStyles[`${imageObj.name}`] = activeComponent === `${imageObj.name}` ? 1 : 0;
 	});
 	
+	const sidebarClick = (id: string) => {
+		setActiveComponent(id)
+		setIsSidebarOpen(false)
+	}
+	
 	return (
 		<div className="w-full bg-red-400">
 			<button
@@ -52,7 +58,7 @@ export function ImageScrolling() {
 			</button>
 			
 			<div ref={sidebarRef}>
-				<Sidebar isOpen={isSidebarOpen}  onItemClick={() => {}}/>
+				<Sidebar isOpen={isSidebarOpen}  onItemClick={sidebarClick}/>
 			</div>
 			
 			{imageUrls.map((imageObj, index) => (
