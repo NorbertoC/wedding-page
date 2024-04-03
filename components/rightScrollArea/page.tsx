@@ -45,12 +45,6 @@ export function RightScrollArea() {
 		setActiveComponent("welcome");
 	}, []);
 	
-	useEffect(() => {
-		console.log("activeComponent: ", activeComponent)
-		scrollToComponent(activeComponent);
-	}, [activeComponent]);
-	
-	
 	const handleScroll = () => {
 		const currentPosition = scrollContainerRef.current?.scrollTop || 0;
 		fetchCurrentPosition(currentPosition);

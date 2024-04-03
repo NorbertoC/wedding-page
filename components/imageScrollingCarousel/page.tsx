@@ -7,9 +7,10 @@ import Sidebar from "@/components/sidebar";
 
 export function ImageScrolling() {
 	const [isSidebarOpen, setIsSidebarOpen] = useState(false);
-	const { activeComponent, setActiveComponent } = useScrollPositionStore((state) => ({
+	const { activeComponent, setActiveComponent, scrollToComponent } = useScrollPositionStore((state) => ({
 		activeComponent: state.activeComponent,
 		setActiveComponent: state.setActiveComponent,
+		scrollToComponent: state.scrollToComponent,
 	}));
 	const sidebarRef = useRef<HTMLDivElement>(null); // Specify the type of sidebarRef
 	
@@ -44,8 +45,9 @@ export function ImageScrolling() {
 	});
 	
 	const sidebarClick = (id: string) => {
-		setActiveComponent(id)
-		setIsSidebarOpen(false)
+		scrollToComponent(id);
+		setActiveComponent(id);
+		setIsSidebarOpen(false);
 	}
 	
 	return (
