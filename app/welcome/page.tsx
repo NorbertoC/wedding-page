@@ -1,6 +1,6 @@
 export default function Welcome() {
 	return (
-		<div className="w-full bg-white h-screen">
+		<div className="w-full bg-blue-400 h-screen">
 			<div>
 				<p>Friday November 22, 2024</p>
 				<p>Auckland, New Zealand</p>
