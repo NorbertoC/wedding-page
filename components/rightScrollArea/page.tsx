@@ -27,17 +27,11 @@ const components = [
 export function RightScrollArea() {
 	const scrollContainerRef = useRef<HTMLDivElement>(null);
 	const {
-		currentScrollPosition,
 		fetchCurrentPosition,
 		setActiveComponent,
-		activeComponent,
-		scrollToComponent,
 	} = useScrollPositionStore((state) => ({
-		currentScrollPosition: state.currentScrollPosition,
 		fetchCurrentPosition: state.fetchCurrentPosition,
 		setActiveComponent: state.setActiveComponent,
-		activeComponent: state.activeComponent,
-		scrollToComponent: state.scrollToComponent,
 	}));
 	
 	
