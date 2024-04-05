@@ -8,7 +8,7 @@ export default function Home() {
         <ImageScrolling/>
       </div>
       <div className="w-1/3 absolute top-0 right-0 z-10 h-full">
-        <div className="bg-amber-300 overflow-hidden flex align-middle items-center">
+        <div className="bg-white overflow-hidden flex align-middle items-center">
           <RightScrollArea/>
         </div>
       </div>
