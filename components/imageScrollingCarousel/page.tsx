@@ -5,7 +5,7 @@ import { useScrollPositionStore } from "@/store/scrollStore";
 import {useEffect, useRef, useState} from "react";
 import Sidebar from "@/components/sidebar";
 
-export function ImageScrolling() {
+const ImageScrolling = () => {
 	const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 	const { activeComponent, setActiveComponent, scrollToComponent } = useScrollPositionStore((state) => ({
 		activeComponent: state.activeComponent,
@@ -77,3 +77,5 @@ export function ImageScrolling() {
 		</div>
 	);
 }
+
+export default ImageScrolling;

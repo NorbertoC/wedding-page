@@ -1,7 +1,7 @@
 "use client"
 
 import * as React from "react";
-import { useRef, useEffect } from "react";
+import { useCallback, useEffect, useRef, useState } from 'react';
 
 import Where from "@/app/where/page";
 import Faq from "@/app/faq/page";
@@ -24,59 +24,67 @@ const components = [
 	{ id: "faq", component: <Faq /> }
 ];
 
-export function RightScrollArea() {
-	const scrollContainerRef = useRef<HTMLDivElement>(null);
-	const {
-		fetchCurrentPosition,
-		setActiveComponent,
-	} = useScrollPositionStore((state) => ({
-		fetchCurrentPosition: state.fetchCurrentPosition,
-		setActiveComponent: state.setActiveComponent,
-	}));
+const RightScrollArea = () => {
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
+  const [elementPositions, setElementPositions] = useState<number[]>([]);
+	const [elementHeights, setElementHeights] = useState<number[]>([]);
+  const {
+    fetchCurrentPosition,
+    setActiveComponent,
+  } = useScrollPositionStore((state) => ({
+    fetchCurrentPosition: state.fetchCurrentPosition,
+    setActiveComponent: state.setActiveComponent,
+  }));
+
+  useEffect(() => {
+    setActiveComponent('welcome');
+  }, []);
 	
-	
-	useEffect(() => {
-		setActiveComponent("welcome");
-	}, []);
-	
-	const handleScroll = () => {
+	const handleScroll = useCallback(() => {
 		const currentPosition = scrollContainerRef.current?.scrollTop || 0;
 		fetchCurrentPosition(currentPosition);
 		
-		components.forEach(({ id }) => {
-			const elementPos = document.getElementById(id)?.offsetTop || 0;
-			const nextElementPos =
-				document.getElementById(components[components.length - 1].id)
-					?.offsetTop || 0;
-			
+		for (let i = 0; i < components.length; i++) {
+			const relativePosition = currentPosition - elementPositions[i];
 			if (
-				currentPosition >= elementPos &&
-				currentPosition < nextElementPos
+				relativePosition >= elementHeights[i] * 0.70 &&
+				currentPosition < (elementPositions[i + 1] || Infinity)
 			) {
-				setActiveComponent(id);
+				setActiveComponent(components[i].id);
+				break;
 			}
-		});
-	};
+		}
+	}, [fetchCurrentPosition, setActiveComponent, elementPositions, elementHeights]);
+
+  useEffect(() => {
+    const handleScrollEvent = () => handleScroll();
+    scrollContainerRef.current?.addEventListener('scroll', handleScrollEvent);
+
+    return () => {
+      scrollContainerRef.current?.removeEventListener('scroll', handleScrollEvent);
+    };
+  }, [handleScroll]);
 	
 	useEffect(() => {
-		const handleScrollEvent = () => handleScroll();
-		scrollContainerRef.current?.addEventListener("scroll", handleScrollEvent);
-		
-		return () => {
-			scrollContainerRef.current?.removeEventListener(
-				"scroll",
-				handleScrollEvent
-			);
-		};
-	}, [scrollContainerRef]);
-	
-	return (
-		<div className="h-screen w-full overflow-y-auto" ref={scrollContainerRef}>
-			{components.map(({ id, component }) => (
-				<div key={id} id={id}>
-					{component}
-				</div>
-			))}
-		</div>
-	);
+		const positions = components.map(({ id }) =>
+			document.getElementById(id)?.offsetTop || 0
+		);
+		const heights = components.map(({ id }) =>
+			document.getElementById(id)?.offsetHeight || 0
+		);
+		setElementPositions(positions);
+		setElementHeights(heights);
+	}, []);
+
+  return (
+    <div className='h-screen w-full overflow-y-auto' ref={scrollContainerRef}>
+      {components.map(({ id, component }) => (
+        <div key={id} id={id}>
+          {component}
+        </div>
+      ))}
+    </div>
+  );
 }
+
+export default RightScrollArea;
