@@ -45,10 +45,13 @@ const RightScrollArea = () => {
 		fetchCurrentPosition(currentPosition);
 		
 		for (let i = 0; i < components.length; i++) {
-			const relativePosition = currentPosition - elementPositions[i];
+			const elementStart = elementPositions[i];
+			const elementEnd = elementStart + elementHeights[i];
+			const activationPoint = elementStart + elementHeights[i] * 0.7;
+			
 			if (
-				relativePosition >= elementHeights[i] * 0.70 &&
-				currentPosition < (elementPositions[i + 1] || Infinity)
+				currentPosition >= activationPoint &&
+				currentPosition < (elementPositions[i + 1])
 			) {
 				setActiveComponent(components[i].id);
 				break;

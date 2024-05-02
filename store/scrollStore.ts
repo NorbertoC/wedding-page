@@ -22,6 +22,8 @@ export const useScrollPositionStore = create<State>((set, get) => {
 			const component = document.getElementById(componentName);
 			if (component) {
 				component.scrollIntoView({ behavior: "smooth" });
+			} else {
+				console.error(`Component with id ${componentName} not found`);
 			}
 		}
 	};
