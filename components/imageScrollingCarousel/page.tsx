@@ -53,14 +53,22 @@ const ImageScrolling = () => {
 	return (
 		<div className="w-full bg-red-400">
 			<button
-				className="absolute top-4 left-4 bg-gray-200 px-3 py-2 rounded z-20"
+				type="button"
+				className="bg-gray-200 rounded-full inline-flex items-center justify-center h-12 min-w-12 px-6 text-gray-800 z-20 fixed top-6 left-6"
 				onClick={() => setIsSidebarOpen(!isSidebarOpen)}
 			>
-				Menu
+				<div className="flex items-center justify-between z-50">
+					<svg width="24" height="18" fill="#333" className="mr-4">
+						<rect width="24" height="2" rx="1"></rect>
+						<rect y="8" width="24" height="2" rx="1"></rect>
+						<rect y="16" width="24" height="2" rx="1"></rect>
+					</svg>
+					<p className="font-medium text-sm leading-7 tracking-widest uppercase">MENU</p>
+				</div>
 			</button>
 			
 			<div ref={sidebarRef}>
-				<Sidebar isOpen={isSidebarOpen}  onItemClick={sidebarClick}/>
+				<Sidebar isOpen={isSidebarOpen} onItemClick={sidebarClick}/>
 			</div>
 			
 			{imageUrls.map((imageObj, index) => (
