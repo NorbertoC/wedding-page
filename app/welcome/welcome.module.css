@@ -1,0 +1,44 @@
+@keyframes upDown {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-23px);
+    }
+    60% {
+        transform: translateY(-23px);
+    }
+}
+
+@keyframes arrowOpacity {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.svgFirstAppear {
+    animation: 500ms ease 1.5s 1 normal forwards running arrowOpacity;
+    animation-duration: 500ms;
+    animation-timing-function: ease;
+    animation-delay: 1.5s;
+    animation-iteration-count: 1;
+    animation-direction: normal;
+    animation-fill-mode: forwards;
+    animation-play-state: running;
+    animation-name: arrowOpacity;
+    opacity: 0;
+}
+
+.svgMoving {
+    animation-duration: 4s;
+    animation-timing-function: ease-out;
+    animation-delay: 1.5s;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+    animation-fill-mode: none;
+    animation-play-state: running;
+    animation-name: upDown;
+}

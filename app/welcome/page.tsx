@@ -1,4 +1,8 @@
+'use client';
+
 import {useScrollPositionStore} from "@/store/scrollStore";
+import styles from "./welcome.module.css"
+import {useEffect, useRef, useState} from "react";
 
 export default function Welcome() {
 	const { activeComponent, setActiveComponent, scrollToComponent } = useScrollPositionStore((state) => ({
@@ -6,10 +10,12 @@ export default function Welcome() {
 		setActiveComponent: state.setActiveComponent,
 		scrollToComponent: state.scrollToComponent,
 	}));
+	const [isClicked, setIsClicked] = useState(false);
 	
 	const onButtonClick = () => {
 		scrollToComponent("story");
 		setActiveComponent("story");
+		setIsClicked(true);
 	}
 	
 	return (
@@ -18,11 +24,11 @@ export default function Welcome() {
 				<p className="text-4xl whitespace-pre-wrap text-center leading-tight tracking-normal">Friday <br/> November 22, 2024</p>
 				<p className="text-2xl whitespace-pre-wrap mt-8 text-center">Auckland, New Zealand</p>
 			</div>
-			<div className="h-20 flex flex-col items-center cursor-pointer" onClick={onButtonClick}>
-				<div className="mb-6">View Details</div>
-				<div className="h-14">
+			<div className={`${styles.svgFirstAppear} h-20 flex flex-col items-center cursor-pointer`} onClick={onButtonClick}>
+				<p className="h-9 text-center text-inherit text-xl leading-9 mb-8">View Details</p>
+				<div className="h-12 relative mx-auto text-inherit text-center">
 					<svg width="66" height="15" viewBox="0 0 66 15" fill="none"
-					     className="">
+					     className={`${!isClicked ? styles.svgMoving : ''}`}>
 						<path opacity="0.8" fillRule="evenodd" clipRule="evenodd"
 						      d="M30.294 14.1a10 10 0 005.882 0l27.905-8.586a2.5 2.5 0 00-1.47-4.779L36.176 8.87a10 10 0 01-5.882 0L3.86.735a2.5 2.5 0 00-1.47 4.78L30.293 14.1z"
 						      fill="currentColor">

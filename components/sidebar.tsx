@@ -13,7 +13,7 @@ function Sidebar({ isOpen, onItemClick }: SidebarProps) {
 	return (
 		<div className={`absolute top-0 left-0 bg-white w-64 h-full shadow-lg transition-transform duration-300 transform ${isOpen ? 'translate-x-0' : '-translate-x-full'} z-20`}>
 			<div
-				className={`relative flex flex-col bg-clip-border rounded-xl bg-white text-gray-700 h-[calc(100vh-2rem)] w-full max-w-[20rem] p-4 shadow-xl shadow-blue-gray-900/5 ${isOpen ? 'translate-x-0' : '-translate-x-full'} z-20`}>
+				className={`relative flex flex-col bg-clip-border rounded-xl bg-white text-gray-700 h-[calc(100vh-2rem)] w-full max-w-[20rem] p-4 shadow-blue-gray-900/5 ${isOpen ? 'translate-x-0' : '-translate-x-full'} z-20`}>
 				<div className="mb-2 p-4">
 					<h5
 						className="block antialiased tracking-normal font-sans text-xl font-semibold leading-snug text-gray-900">
