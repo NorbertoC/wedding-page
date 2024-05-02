@@ -82,6 +82,14 @@ const ImageScrolling = () => {
 					}}
 				/>
 			))}
+			<div className="md:block hidden absolute flex flex-col p-10 text-white bg-gradient-to-t from-gray-500 via-transparent to-transparent w-full justify-end bottom-0 z-20">
+				<p className="text-9xl font-light leading-none tracking-tight">
+					Mana & Norberto
+				</p>
+				<p className="font-gotham font-medium text-lg leading-snug tracking-tighter mt-4 whitespace-pre-wrap">
+					We can't wait to share our special day with you.
+				</p>
+			</div>
 		</div>
 	);
 }

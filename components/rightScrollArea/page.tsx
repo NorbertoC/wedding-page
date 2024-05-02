@@ -1,7 +1,7 @@
 "use client"
 
 import * as React from "react";
-import { useCallback, useEffect, useRef, useState } from 'react';
+import {useCallback, useEffect, useMemo, useRef, useState} from 'react';
 
 import Where from "@/app/where/page";
 import Faq from "@/app/faq/page";
@@ -12,17 +12,7 @@ import WeddingPeople from "@/app/wedding-people/page";
 import TidBits from "@/app/tidbits/page";
 import Schedule from "@/app/schedule/page";
 import { useScrollPositionStore } from "@/store/scrollStore";
-
-const components = [
-	{ id: "welcome", component: <Welcome /> },
-	{ id: "story", component: <Story /> },
-	{ id: "tidBits", component: <TidBits /> },
-	{ id: "schedule", component: <Schedule /> },
-	{ id: "where", component: <Where /> },
-	{ id: "travel", component: <Travel /> },
-	{ id: "weddingPeople", component: <WeddingPeople /> },
-	{ id: "faq", component: <Faq /> }
-];
+import {debounce} from "next/dist/server/utils";
 
 const RightScrollArea = () => {
   const scrollContainerRef = useRef<HTMLDivElement>(null);
@@ -35,12 +25,23 @@ const RightScrollArea = () => {
     fetchCurrentPosition: state.fetchCurrentPosition,
     setActiveComponent: state.setActiveComponent,
   }));
+	
+	const components = useMemo(() => [
+		{ id: "welcome", component: <Welcome /> },
+		{ id: "story", component: <Story /> },
+		{ id: "tidBits", component: <TidBits /> },
+		{ id: "schedule", component: <Schedule /> },
+		{ id: "where", component: <Where /> },
+		{ id: "travel", component: <Travel /> },
+		{ id: "weddingPeople", component: <WeddingPeople /> },
+		{ id: "faq", component: <Faq /> }
+	], []);
 
   useEffect(() => {
     setActiveComponent('welcome');
   }, []);
 	
-	const handleScroll = useCallback(() => {
+	const handleScroll = useCallback(debounce(() => {
 		const currentPosition = scrollContainerRef.current?.scrollTop || 0;
 		fetchCurrentPosition(currentPosition);
 		
@@ -57,7 +58,7 @@ const RightScrollArea = () => {
 				break;
 			}
 		}
-	}, [fetchCurrentPosition, setActiveComponent, elementPositions, elementHeights]);
+	}, 200), [fetchCurrentPosition, setActiveComponent, elementPositions, elementHeights]);
 
   useEffect(() => {
     const handleScrollEvent = () => handleScroll();

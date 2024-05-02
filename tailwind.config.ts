@@ -19,7 +19,6 @@ const config = {
     },
     extend: {
       fontFamily: {
-        playfair: ['"Playfair Display"', "sans-serif"],
         gothic: ['"Didact Gothic"', "sans-serif"],
         gotham: ['"Gotham SSm"', 'Helvetica', 'Arial', 'sans-serif'],
       },
@@ -29,6 +28,7 @@ const config = {
         ring: "hsl(var(--ring))",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
+        sidebarText: 'rgb(174, 190, 148)',
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
