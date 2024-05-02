@@ -87,7 +87,7 @@ const ImageScrolling = () => {
 					Mana & Norberto
 				</p>
 				<p className="font-gotham font-medium text-lg leading-snug tracking-tighter mt-4 whitespace-pre-wrap">
-					We can't wait to share our special day with you.
+					We can&apos;t wait to share our special day with you.
 				</p>
 			</div>
 		</div>

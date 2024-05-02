@@ -1,9 +1,8 @@
 import type { Metadata } from "next";
-import { Didact_Gothic, Playfair } from "next/font/google";
+import { Playfair } from "next/font/google";
 import "./globals.css";
 
 const inter = Playfair({ subsets: ["latin"] });
-// const inter = Didact_Gothic({ subsets: ["latin"], weight: "400" });
 
 export const metadata: Metadata = {
   title: "Mana and Norberto Wedding",
