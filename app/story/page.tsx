@@ -2,7 +2,7 @@ export default function Story() {
 	return (
 		<div className="w-full bg-white py-16 flex flex-col items-center box-border break-words my-16 ">
 			<h2 className="text-5xl">Story</h2>
-			<div className="py-16 px-16 text-base font-['Didact_Gothic']">
+			<div className="py-16 px-16 text-base font-gotham">
 				<p>The first time I saw him, we were both sitting at the same gate for a flight to San Diego. I remember
 					glancing over at him and thinking, Oh, wow, he’s cute. When I got to my seat, I saw that the seat beside me
 					was empty and thought, how awesome would it be if he ended up next to me?

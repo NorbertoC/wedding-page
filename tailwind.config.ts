@@ -21,6 +21,7 @@ const config = {
       fontFamily: {
         playfair: ['"Playfair Display"', "sans-serif"],
         gothic: ['"Didact Gothic"', "sans-serif"],
+        gotham: ['"Gotham SSm"', 'Helvetica', 'Arial', 'sans-serif'],
       },
       colors: {
         border: "hsl(var(--border))",
