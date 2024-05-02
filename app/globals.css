@@ -74,3 +74,11 @@
     @apply bg-background text-foreground;
   }
 }
+
+@layer components {
+  @screen md {
+    .right-scroll-area {
+      width: 40%;
+    }
+  }
+}
