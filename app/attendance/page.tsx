@@ -1,6 +1,6 @@
 const Attendance = () => {
 	return (
-		<section className="inline-block w-full">
+		<section className="inline-block w-full mt-16">
 			<article className="mb-16 mx-auto max-w-2xl">
 				<header className="mb-6">
 					<h1 className="ml-1 mr-1 break-words text-5xl leading-snug mt-4 text-center">

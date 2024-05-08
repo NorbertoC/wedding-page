@@ -52,9 +52,9 @@ const faqs: Faq[] = [
 
 const Faq = () => {
 	return (
-		<section className="inline-block w-full">
-			<article className="mb-16 mx-auto max-w-2xl">
-				<header className="mb-6">
+		<section className="inline-block w-full mt-16">
+			<article className="mb-16 mx-auto max-w-xl">
+				<header className="mb-16">
 					<h1 className="ml-1 mr-1 break-words text-5xl leading-snug mt-4 text-center">
 						Q & A
 					</h1>
@@ -66,18 +66,14 @@ const Faq = () => {
 				</div>
 				<div className="m-0 mx-auto pb-16 px-8 max-w-xl">
 					{faqs.map((faq, index) => (
-						<div className="flex flex-col" key={index}>
-							<div className="mt-16">
-								<p className="font-gotham text-xl">
-									{faq.question}
-								</p>
-								<div className="font-gotham font-light break-words mt-4">
-									<p className="m-0">
-										{faq.answer}
-									</p>
-								</div>
-							</div>
-						</div>
+						<section key={index}>
+							<h2 className="font-gotham text-xl mt-16">
+								{faq.question}
+							</h2>
+							<p className="font-gotham font-light break-words mt-4">
+								{faq.answer}
+							</p>
+						</section>
 					))}
 				</div>
 			</article>

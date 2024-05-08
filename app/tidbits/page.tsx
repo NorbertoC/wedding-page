@@ -40,31 +40,29 @@ const TidBits = () => {
 	];
 	
 	return (
-		<div className="inline-block w-full">
-			<div className="mb-16 mx-auto max-w-2xl">
-				<div className="mb-16">
-					<p className="ml-1 mr-1 break-words text-5xl leading-snug mt-4 text-center">
+		<section className="inline-block w-full">
+			<article className="mb-16 mx-auto max-w-lg">
+				<header className="mb-16">
+					<h1 className="ml-1 mr-1 break-words text-5xl leading-snug mt-4 text-center">
 						Tidbits
-					</p>
+					</h1>
 					<div className="max-w-xl mx-auto p-16 px-8">
 						<div className="max-w-5xl">
 							{qaArray.map((item, index) => (
-								<div key={index} className="mb-16">
-									<p className="font-medium text-xl font-gotham leading-7 tracking-tight break-words">
+								<section key={index} className="mb-16">
+									<h2 className="font-medium text-xl font-gotham leading-7 tracking-tight break-words">
 										{item.question}
+									</h2>
+									<p className="font-gotham font-normal leading-7 text-base break-words block my-4 mx-0 tracking-tight mt-4">
+										{item.answer}
 									</p>
-									<div className="font-gotham font-normal leading-7 text-base break-words">
-										<p className="block my-4 mx-0 tracking-tight mt-4">
-											{item.answer}
-										</p>
-									</div>
-								</div>
+								</section>
 							))}
 						</div>
 					</div>
-				</div>
-			</div>
-		</div>
+				</header>
+			</article>
+		</section>
 	);
 }
 
