@@ -84,12 +84,12 @@ const Schedule = () => {
 								</li>
 							))}
 						</ul>
-						<iframe
-							title="Map for Seattle Japanese Garden, Lake Washington Boulevard East, Seattle, WA, USA"
-							width="100%" height="320px"
-							src="https://www.google.com/maps/embed/v1/place?key=AIzaSyB9ePoqHL2N2xqOhy2H_7vjDokVDIq8-fE&amp;zoom=10&amp;q=place_id%3AChIJQ3K1QtIUkFQRNM3jmnMDMVk"
-							className="Linkifystyles__StyledLinkifyWrapper-sc-za1d5g-0 eUydfu">
-						</iframe>
+						{/*<iframe*/}
+						{/*	title="Map for Seattle Japanese Garden, Lake Washington Boulevard East, Seattle, WA, USA"*/}
+						{/*	width="100%" height="320px"*/}
+						{/*	src="https://www.google.com/maps/embed/v1/place?key=AIzaSyB9ePoqHL2N2xqOhy2H_7vjDokVDIq8-fE&amp;zoom=10&amp;q=place_id%3AChIJQ3K1QtIUkFQRNM3jmnMDMVk"*/}
+						{/*	className="Linkifystyles__StyledLinkifyWrapper-sc-za1d5g-0 eUydfu">*/}
+						{/*</iframe>*/}
 					</div>
 				</header>
 			</article>
