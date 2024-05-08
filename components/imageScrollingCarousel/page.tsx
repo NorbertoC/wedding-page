@@ -80,7 +80,7 @@ const ImageScrolling = () => {
 					}}
 				/>
 			))}
-			<div className="md:block absolute flex flex-col p-10 text-white bg-gradient-to-t from-gray-500 via-transparent to-transparent w-full justify-end bottom-0 z-20">
+			<div className="hidden md:block absolute flex-col p-10 text-white bg-gradient-to-t from-gray-500 via-transparent to-transparent w-full justify-end bottom-0 z-20">
 				<p className="text-9xl font-light leading-none tracking-tight">
 					Mana & Norberto
 				</p>
