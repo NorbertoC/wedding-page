@@ -53,7 +53,7 @@ const TidBits = () => {
 									<h2 className="font-medium text-xl font-gotham leading-7 tracking-tight break-words">
 										{item.question}
 									</h2>
-									<p className="font-gotham font-normal leading-7 text-base break-words block my-4 mx-0 tracking-tight mt-4">
+									<p className="font-gotham font-light leading-7 text-base break-words block my-4 mx-0 tracking-tight mt-4">
 										{item.answer}
 									</p>
 								</section>

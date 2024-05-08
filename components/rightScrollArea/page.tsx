@@ -10,19 +10,21 @@ import Welcome from "@/app/welcome/page";
 import TidBits from "@/app/tidbits/page";
 import Schedule from "@/app/schedule/page";
 import { useScrollPositionStore } from "@/store/scrollStore";
-import {debounce} from "next/dist/server/utils";
+import { debounce } from "next/dist/server/utils";
 
 const RightScrollArea = () => {
-  const scrollContainerRef = useRef<HTMLDivElement>(null);
-  const [elementPositions, setElementPositions] = useState<number[]>([]);
+	const scrollContainerRef = useRef<HTMLDivElement>(null);
+	const [elementPositions, setElementPositions] = useState<number[]>([]);
 	const [elementHeights, setElementHeights] = useState<number[]>([]);
-  const {
-    fetchCurrentPosition,
-    setActiveComponent,
-  } = useScrollPositionStore((state) => ({
-    fetchCurrentPosition: state.fetchCurrentPosition,
-    setActiveComponent: state.setActiveComponent,
-  }));
+	const {
+		fetchCurrentPosition,
+		setActiveComponent,
+		activeComponent,
+	} = useScrollPositionStore((state) => ({
+		fetchCurrentPosition: state.fetchCurrentPosition,
+		setActiveComponent: state.setActiveComponent,
+		activeComponent: state.activeComponent,
+	}));
 	
 	const components = useMemo(() => [
 		{ id: "welcome", component: <Welcome /> },
@@ -32,38 +34,42 @@ const RightScrollArea = () => {
 		{ id: "attendance", component: <Attendance /> },
 		{ id: "faq", component: <Faq /> }
 	], []);
-
-  useEffect(() => {
-    setActiveComponent('welcome');
-  }, []);
 	
-	const handleScroll = useCallback(debounce(() => {
-		const currentPosition = scrollContainerRef.current?.scrollTop || 0;
-		fetchCurrentPosition(currentPosition);
-		
-		for (let i = 0; i < components.length; i++) {
-			const elementStart = elementPositions[i];
-			const elementEnd = elementStart + elementHeights[i];
-			const activationPoint = elementStart + elementHeights[i] * 0.7;
+	useEffect(() => {
+		setActiveComponent('welcome');
+	}, []);
+	
+	const handleScroll = useCallback(() => {
+		const debouncedFunc = debounce(() => {
+			const currentPosition = scrollContainerRef.current?.scrollTop || 0;
+			fetchCurrentPosition(currentPosition);
 			
-			if (
-				currentPosition >= activationPoint &&
-				currentPosition < (elementPositions[i + 1])
-			) {
-				setActiveComponent(components[i].id);
-				break;
+			for (let i = 0; i < components.length; i++) {
+				const elementStart = elementPositions[i];
+				const activationPoint = i > 0 ? elementStart - elementHeights[i - 1] * 0.5 : elementStart;
+				
+				if (
+					currentPosition >= activationPoint &&
+					currentPosition < (elementPositions[i + 1] || Infinity)
+				) {
+					setActiveComponent(components[i].id);
+					break;
+				}
 			}
-		}
-	}, 200), [fetchCurrentPosition, setActiveComponent, elementPositions, elementHeights]);
-
-  useEffect(() => {
-    const handleScrollEvent = () => handleScroll();
-    scrollContainerRef.current?.addEventListener('scroll', handleScrollEvent);
-
-    return () => {
-      scrollContainerRef.current?.removeEventListener('scroll', handleScrollEvent);
-    };
-  }, [handleScroll]);
+		}, 200);
+		debouncedFunc();
+	}, [fetchCurrentPosition, setActiveComponent, elementPositions, elementHeights, components]);
+	
+	useEffect(() => {
+		const scrollContainerCurrent = scrollContainerRef.current;
+		
+		const handleScrollEvent = () => handleScroll();
+		scrollContainerCurrent?.addEventListener('scroll', handleScrollEvent);
+		
+		return () => {
+			scrollContainerCurrent?.removeEventListener('scroll', handleScrollEvent);
+		};
+	}, [handleScroll]);
 	
 	useEffect(() => {
 		const positions = components.map(({ id }) =>
@@ -75,16 +81,18 @@ const RightScrollArea = () => {
 		setElementPositions(positions);
 		setElementHeights(heights);
 	}, []);
-
-  return (
-    <div className='h-screen w-full overflow-y-auto' ref={scrollContainerRef}>
-      {components.map(({ id, component }) => (
-        <div key={id} id={id}>
-          {component}
-        </div>
-      ))}
-    </div>
-  );
+	
+	console.log('activeComponent', activeComponent)
+	
+	return (
+		<div className='h-screen w-full overflow-y-auto' ref={scrollContainerRef}>
+			{components.map(({ id, component }) => (
+				<div key={id} id={id}>
+					{component}
+				</div>
+			))}
+		</div>
+	);
 }
 
 export default RightScrollArea;
