@@ -7,8 +7,6 @@ import Attendance from "@/app/attendance/page";
 import Faq from "@/app/faq/page";
 import Story from "@/app/story/page";
 import Welcome from "@/app/welcome/page";
-import Travel from "@/app/travel/page";
-import WeddingPeople from "@/app/wedding-people/page";
 import TidBits from "@/app/tidbits/page";
 import Schedule from "@/app/schedule/page";
 import { useScrollPositionStore } from "@/store/scrollStore";
@@ -32,8 +30,6 @@ const RightScrollArea = () => {
 		{ id: "tidBits", component: <TidBits /> },
 		{ id: "schedule", component: <Schedule /> },
 		{ id: "attendance", component: <Attendance /> },
-		{ id: "travel", component: <Travel /> },
-		{ id: "weddingPeople", component: <WeddingPeople /> },
 		{ id: "faq", component: <Faq /> }
 	], []);
 
