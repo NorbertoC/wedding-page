@@ -46,7 +46,7 @@ const TidBits = () => {
 					<p className="ml-1 mr-1 break-words text-5xl leading-snug mt-4 text-center">
 						Tidbits
 					</p>
-					<div className="max-w-md mx-auto p-16 px-8">
+					<div className="max-w-xl mx-auto p-16 px-8">
 						<div className="max-w-5xl">
 							{qaArray.map((item, index) => (
 								<div key={index} className="mb-16">
