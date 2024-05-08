@@ -53,7 +53,7 @@ const faqs: Faq[] = [
 const Faq = () => {
 	return (
 		<section className="inline-block w-full mt-16">
-			<article className="mb-16 mx-auto max-w-xl">
+			<article className="mb-16 mx-auto max-w-lg">
 				<header className="mb-16">
 					<h1 className="ml-1 mr-1 break-words text-5xl leading-snug mt-4 text-center">
 						Q & A
