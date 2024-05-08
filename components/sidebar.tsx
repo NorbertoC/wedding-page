@@ -21,7 +21,7 @@ function Sidebar({ isOpen, onItemClick }: SidebarProps) {
 					</h5>
 				</div>
 				<nav className="flex flex-col gap-1 min-w-[240px] p-2 text-base font-normal text-gray-700">
-					{['welcome', 'story', 'tidBits', 'schedule', 'attendance', 'travel', 'weddingPeople', 'faq'].map((id) => (
+					{['welcome', 'story', 'tidBits', 'schedule', 'attendance', 'faq'].map((id) => (
 						<div key={id} role="button" tabIndex={0}
 						     className="flex items-center font-gotham text-sidebarText w-full p-3 rounded-lg text-start leading-tight transition-all hover:bg-green-50 hover:bg-opacity-80 focus:bg-green-100 focus:bg-opacity-80 active:bg-gray-50 active:bg-opacity-80 focus:text-blue-900 active:text-blue-900 outline-none"
 						     onClick={() => handleItemClick(id)}>
