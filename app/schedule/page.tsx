@@ -26,7 +26,7 @@ const events: Event[] = [
 	},
 	{
 		eventName: "Rehearsal",
-		description: "Please be present for our rehearsal, so that you know what to do and where to stand on our big day!",
+		description: "Please be present for our rehearsal, so that you know what to do and attendance to stand on our big day!",
 		dressCode: "Cocktail Attire",
 		location: "Seattle Japanese Garden, Lake Washington Boulevard East, Seattle, WA, USA"
 	},

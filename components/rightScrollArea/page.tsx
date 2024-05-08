@@ -3,7 +3,7 @@
 import * as React from "react";
 import {useCallback, useEffect, useMemo, useRef, useState} from 'react';
 
-import Where from "@/app/where/page";
+import Attendance from "@/app/attendance/page";
 import Faq from "@/app/faq/page";
 import Story from "@/app/story/page";
 import Welcome from "@/app/welcome/page";
@@ -31,7 +31,7 @@ const RightScrollArea = () => {
 		{ id: "story", component: <Story /> },
 		{ id: "tidBits", component: <TidBits /> },
 		{ id: "schedule", component: <Schedule /> },
-		{ id: "where", component: <Where /> },
+		{ id: "attendance", component: <Attendance /> },
 		{ id: "travel", component: <Travel /> },
 		{ id: "weddingPeople", component: <WeddingPeople /> },
 		{ id: "faq", component: <Faq /> }
