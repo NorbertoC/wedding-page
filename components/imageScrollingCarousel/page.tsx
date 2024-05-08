@@ -29,11 +29,11 @@ const ImageScrolling = () => {
 	
 	const imageUrls = [
 		{ name: "tidBits", url: "https://withjoy.com/media/e0da4e13fea775086e5fa3bb47c9b21ffc5a21c3fd28ae027/srAEJ3TPuw8ejjuRCJeQ_IMG_4823.jpg?rendition=xlarge" },
-		{ name: "story", url: "https://withjoy.com/media/e0da4e13fea775086e5fa3bb47c9b21ffc5a21c3fd28ae027/eytFvJZKScik5QGRwn5i_tauranga-2.jpg?rendition=xlarge" },
-		{ name: "welcome", url: "https://withjoy.com/media/e0da4e13fea775086e5fa3bb47c9b21ffc5a21c3fd28ae027/eytFvJZKScik5QGRwn5i_tauranga-2.jpg?rendition=xlarge" },
+		{ name: "attendance", url: "https://withjoy.com/media/e0da4e13fea775086e5fa3bb47c9b21ffc5a21c3fd28ae027/eytFvJZKScik5QGRwn5i_tauranga-2.jpg?rendition=xlarge" },
+		{ name: "faq", url: "https://withjoy.com/media/e0da4e13fea775086e5fa3bb47c9b21ffc5a21c3fd28ae027/eytFvJZKScik5QGRwn5i_tauranga-2.jpg?rendition=xlarge" },
 		{ name: "schedule", url: "https://withjoy.com/media/e0da4e13fea775086e5fa3bb47c9b21ffc5a21c3fd28ae027/aTI1FF1kTzeVYV6edc3P_disney-fun.jpg?rendition=xlarge" },
-		{ name: "where", url: "https://withjoy.com/media/e0da4e13fea775086e5fa3bb47c9b21ffc5a21c3fd28ae027/bFKBljVjR228t5Xfj95c_rose.jpg?rendition=xlarge" },
-		{ name: "faq", url: "https://withjoy.com/media/e0da4e13fea775086e5fa3bb47c9b21ffc5a21c3fd28ae027/srAEJ3TPuw8ejjuRCJeQ_IMG_4823.jpg?rendition=xlarge" },
+		{ name: "story", url: "https://withjoy.com/media/e0da4e13fea775086e5fa3bb47c9b21ffc5a21c3fd28ae027/bFKBljVjR228t5Xfj95c_rose.jpg?rendition=xlarge" },
+		{ name: "welcome", url: "https://withjoy.com/media/e0da4e13fea775086e5fa3bb47c9b21ffc5a21c3fd28ae027/srAEJ3TPuw8ejjuRCJeQ_IMG_4823.jpg?rendition=xlarge" },
 	]
 	
 	const opacityStyles: { [key: string]: number } = {};
@@ -80,7 +80,7 @@ const ImageScrolling = () => {
 					}}
 				/>
 			))}
-			<div className="md:block hidden absolute flex flex-col p-10 text-white bg-gradient-to-t from-gray-500 via-transparent to-transparent w-full justify-end bottom-0 z-20">
+			<div className="md:block absolute flex flex-col p-10 text-white bg-gradient-to-t from-gray-500 via-transparent to-transparent w-full justify-end bottom-0 z-20">
 				<p className="text-9xl font-light leading-none tracking-tight">
 					Mana & Norberto
 				</p>
