@@ -82,8 +82,6 @@ const RightScrollArea = () => {
 		setElementHeights(heights);
 	}, []);
 	
-	console.log('activeComponent', activeComponent)
-	
 	return (
 		<div className='h-screen w-full overflow-y-auto' ref={scrollContainerRef}>
 			{components.map(({ id, component }) => (
