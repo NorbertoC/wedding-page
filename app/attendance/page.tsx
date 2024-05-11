@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from "react";
-import { addGuest } from "@/app/lib/data";
+import {createGuest} from "@/app/lib/actions";
 
 const Attendance = () => {
 	const [firstName, setFirstName] = useState('');
@@ -10,26 +10,6 @@ const Attendance = () => {
 	const [email, setEmail] = useState('');
 	const [rsvp, setRsvp] = useState(false);
 	const [weddingLocation, setWeddingLocation] = useState('Auckland');
-	
-	const handleSubmit = async (event: React.FormEvent) => {
-		event.preventDefault();
-		
-		const guest = {
-			first_name: firstName,
-			last_name: lastName,
-			middle_name: middleName,
-			email,
-			rsvp,
-			wedding_location: weddingLocation,
-		};
-		
-		try {
-			await addGuest(guest);
-			alert('Guest added successfully');
-		} catch (error) {
-			alert('Failed to add guest');
-		}
-	};
 	
 	return (
 		<section className="inline-block w-full mt-16">
@@ -44,7 +24,7 @@ const Attendance = () => {
 						Please fill the form below to RSVP.
 					</p>
 				</div>
-				<form onSubmit={handleSubmit} className="bg-white rounded px-8 pt-6 pb-8 mb-4">
+				<form action={createGuest} className="bg-white rounded px-8 pt-6 pb-8 mb-4">
 					<input
 						className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
 						type="text"
