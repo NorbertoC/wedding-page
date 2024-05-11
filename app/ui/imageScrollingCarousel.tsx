@@ -3,7 +3,7 @@
 import * as React from "react";
 import { useScrollPositionStore } from "@/store/scrollStore";
 import {useEffect, useRef, useState} from "react";
-import Sidebar from "@/components/sidebar";
+import Sidebar from "@/app/ui/sidebar";
 
 const ImageScrolling = () => {
 	const [isSidebarOpen, setIsSidebarOpen] = useState(false);
