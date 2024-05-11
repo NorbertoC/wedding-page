@@ -3,12 +3,12 @@
 import * as React from "react";
 import {useCallback, useEffect, useMemo, useRef, useState} from 'react';
 
-import Attendance from "@/app/attendance/page";
-import Faq from "@/app/faq/page";
-import Story from "@/app/story/page";
-import Welcome from "@/app/welcome/page";
-import TidBits from "@/app/tidbits/page";
-import Schedule from "@/app/schedule/page";
+import Attendance from "@/app/ui/Attendance";
+import Faq from "@/app/ui/Faq";
+import Story from "@/app/ui/Story";
+import Welcome from "@/app/ui/welcome/Welcome";
+import TidBits from "@/app/ui/TidBits";
+import Schedule from "@/app/ui/Schedule";
 import { useScrollPositionStore } from "@/store/scrollStore";
 import { debounce } from "next/dist/server/utils";
 
