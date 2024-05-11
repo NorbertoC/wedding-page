@@ -6,7 +6,7 @@ import {useCallback, useEffect, useMemo, useRef, useState} from 'react';
 import Attendance from "@/app/ui/attendance";
 import Faq from "@/app/ui/faq";
 import Story from "@/app/ui/story";
-import Welcome from "@/app/ui/welcome/welcome";
+import Welcome from "@/app/ui/welcome";
 import TidBits from "@/app/ui/tidBits";
 import Schedule from "@/app/ui/schedule";
 import { useScrollPositionStore } from "@/store/scrollStore";
